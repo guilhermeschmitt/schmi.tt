@@ -1,0 +1,117 @@
+@import "helper/_variables";
+@import "helper/placeholder";
+@import "helper/mixins";
+
+footer {
+    .glyphicon {
+        @include color-and-fontsize($navbar-color, 20px);
+        margin-bottom: 20px;
+    }
+}
+
+.bg-blue {
+    background-color: $container-par-azul;
+}
+
+.btn-projeto {
+    margin-bottom: 20px;
+}
+
+.container-fluid {
+    padding: 60px 50px;
+}
+
+.det {
+    text-align: right;
+}
+
+.jumbotron {
+    background-color: $azul-bg;
+    color: $cor-fonte-bg;
+    padding: 70px 100px 20px 100px;
+    letter-spacing: 3px;
+}
+
+.logo {
+    @include color-and-fontsize($azul-bg, 200px);
+}
+
+.logo-small {
+    @include color-and-fontsize($navbar-color, 50px !important);
+}
+
+.navbar {
+    margin-bottom: 0;
+    background-color: $navbar-color;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+
+    li {
+        a {
+            @extend %navbar-brand;
+        }
+    }
+
+    .navbar-brand {
+        @extend %navbar-brand;
+    }
+}
+
+.navbar-default {
+    .navbar-toggle {
+        border-color: transparent;
+        color: #fff !important;
+    }
+}
+
+.navbar-nav {
+    li.active {
+        a {
+            @extend %navbar-hover;
+        }
+    }
+
+    li {
+        a {
+            &:hover {
+                @extend %navbar-hover;
+            }
+        }
+    }
+}
+
+.progress {
+    width: 450px;
+    margin-left: 420px;
+}
+.projetos {
+    margin-bottom: -30px !important;
+}
+
+.rodape {
+    padding: 20px 50px !important;
+}
+
+.sobre-det {
+    text-align: justify;
+}
+
+.social {
+    i {
+        padding-left: 10px;
+        @include color-and-fontsize($azul-bg, 30px);
+    }
+
+    p {
+        font-size: 15px;
+        padding-top: 5px;
+    }
+}
+
+.tab-pane .glyphicon {
+    @include color-and-fontsize($azul-bg, 200px);
+}
