@@ -1,9 +1,8 @@
 ﻿<!DOCTYPE html>
-<html>
+<html data-ng-app="Schmitt2">
 <head>
     <title>Schmi.tt</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, inicial-scale=1">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/media.css">
@@ -11,6 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../scripts/angular.min.js"></script>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
     <!--Nav do site-->
@@ -141,6 +141,14 @@
                     <p>Projeto tem com o intuito fazer um conversor de texto para binário, hexadecimal, octadecimal, e mais oque eu conseguir.</p>
                 </div>
             </div>
+            <div class="row">
+                <h1>Conversor de Textos</h1>
+                <div class="col-sm-5">
+                    <input type="number" data-ng-model="text" placeholder="Texto a ser convertido" 
+                    class="form-control">
+                    <p>Decimal para Binario= {{text | dectobin}}</p>
+                </div>
+            </div>
             <br><br>
         </div>
         <!--div do 3D&T-->
@@ -227,5 +235,8 @@
     </footer>
     <!--Script pra quando clicar no nav, ele ir devagar até tal local-->
     <script src="../scripts/smoothScrolling.js"></script>
+    <script src="../scripts/controllerSchmitt.js"></script>
+    <script src="../scripts/filters.js"></script>
+
 </body>
 </html>
