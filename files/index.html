@@ -6,11 +6,13 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.3/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="../scripts/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.3/js/bootstrap-select.min.js"></script>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
     <!--Nav do site-->
@@ -134,22 +136,35 @@
     <!--Div do tab content, também conhecido como Projetos-->
     <div class="tab-content">
          <!--div do 'tradutor' de textos-->
-        <div id="convertext" class="tab-pane fade in active text-center">
+        <div id="convertext" class="tab-pane fade in active text-center" data-ng-controller="ConvertController">
             <div class="row">
                 <div class="col-sm-12">
                     <h2>Conversor de Textos</h2>
                     <p>Projeto tem com o intuito fazer um conversor de texto para binário, hexadecimal, octadecimal, e mais oque eu conseguir.</p>
                 </div>
             </div>
-            <div class="row">
-                <h1>Conversor de Textos</h1>
-                <div class="col-sm-5">
-                    <input type="number" data-ng-model="text" placeholder="Texto a ser convertido" 
-                    class="form-control">
-                    <p>Decimal para Binario= {{text | dectobin}}</p>
-                </div>
+            <br/><br/>
+            <div class="row" >
+                <select id="selectoption" name="selectoption" ng-model="numeroCampos" ng-init="numeroCampos = 0">
+                  <optgroup label="Grupo 1">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                 </optgroup>
+               </select>
+                <br><br>
+                <div class="col-sm-5" ng-repeat="campo in campos">
+                    <input type="number" ng-model="campo.textconvert" placeholder="Texto a ser convertido"> 
+                    <p>Decimal para binário = {{campo.textconvert | bintodec}}</p>
+               </div>
             </div>
-            <br><br>
+            
         </div>
         <!--div do 3D&T-->
         <div id="3det" class="tab-pane fade in text-center">

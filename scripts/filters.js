@@ -1,4 +1,14 @@
 angular.module('Schmitt2', [])
+		.controller("ConvertController", ['$scope', function($scope){
+			   $scope.campos = [];
+			 
+			   $scope.$watch('numeroCampos', function() {
+			     $scope.campos = [];
+			       for(i = 0; i < $scope.numeroCampos; i++) {
+			         $scope.campos[i] = { textconvert: 8 };
+			       }
+			   });
+			}])
 		.filter('converttobinario', function(){
 			return function(text){
 				var PADDING = "00000000";
@@ -220,3 +230,5 @@ angular.module('Schmitt2', [])
 				return hex.join('');
 			}
 		})
+		
+		
